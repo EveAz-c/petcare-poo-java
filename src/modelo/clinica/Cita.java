@@ -1,5 +1,5 @@
 package modelo.clinica;
 
-public class Cita {
-    
+public abstract class Cita {
+
 }
