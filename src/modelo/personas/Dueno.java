@@ -1,6 +1,5 @@
 package modelo.personas;
-import modelo.mascotas.Mascota;
-import modelo.mascotas.HistorialClinico;
+import modelo.mascotas.*;
 
 public class Dueno extends Persona {
     private String direccion;

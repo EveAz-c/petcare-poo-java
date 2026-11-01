@@ -1,5 +1,5 @@
 package modelo.servicios;
 
-public class Facturable {
-    
+public interface Facturable {
+    double calcularCosto();
 }
