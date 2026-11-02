@@ -10,19 +10,11 @@ public class Comprobante {
     private LocalDate fechaEmision;
     private Cita citaAsociada;
 
-    public Comprobante(int idComprobante, Cita citaAsociada) {
+    public Comprobante(int idComprobante, Cita citaAsociada, double total) {
         this.idComprobante = idComprobante;
         this.citaAsociada = citaAsociada;
         this.fechaEmision = LocalDate.now();
-        generarComprobante();
-    }
-
-    public void generarComprobante() {
-        if (citaAsociada != null && citaAsociada.getServicio() != null) {
-            this.total = citaAsociada.getServicio().calcularCosto();
-        } else {
-            this.total = 0.0;
-        }
+        this.total = total;
     }
 
     public String mostrarDetalle() {
@@ -63,7 +55,6 @@ public class Comprobante {
 
     public void setCitaAsociada(Cita citaAsociada) {
         this.citaAsociada = citaAsociada;
-        generarComprobante(); 
     }
 
     @Override

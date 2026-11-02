@@ -46,6 +46,10 @@ public abstract class Mascota {
         }
         this.peso = peso;
     }
+    
+    public Dueno getDueno(){
+        return dueno;
+    }
 
     public abstract void hacerSonido();
 

@@ -1,8 +1,9 @@
 package modelo.mascotas;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import modelo.servicios.*;
+import modelo.servicios.Facturable;
 
 public class HistorialClinico {
     private List<Facturable> serviciosRealizados;
@@ -29,10 +30,7 @@ public class HistorialClinico {
     }
 
     public List<Facturable> getServiciosRealizados() {
-        return serviciosRealizados;
+        return Collections.unmodifiableList(serviciosRealizados);
     }
 
-    public void setServiciosRealizados(List<Facturable> serviciosRealizados) {
-        this.serviciosRealizados = serviciosRealizados;
-    }
 }

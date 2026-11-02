@@ -1,14 +1,17 @@
 package modelo.personas;
-import modelo.mascotas.*;
+
+import modelo.mascotas.Mascota;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dueno extends Persona {
     private String direccion;
-    private Mascota mascota;
+    private List<Mascota> mascotas;
 
     public Dueno (String nombre, String apellido, String telefono, String correo, String direccion, Mascota mascota) {
         super(nombre, apellido, telefono, correo);
         this.direccion = direccion;
-        this.mascota = mascota;
+        this.mascotas = new ArrayList<>();
     }
     
     public String getDireccion() {
@@ -19,17 +22,18 @@ public class Dueno extends Persona {
         this.direccion = direccion;
     }
 
-    public Mascota agregarMascota(Mascota mascota) {
-        this.mascota = mascota;
-        return mascota;
+    public void agregarMascota(Mascota mascota) {
+        if (mascota != null && !mascotas.contains(mascota)) {
+            mascotas.add(mascota);
+        }
     }
 
-    public Mascota listarMascota() {
-        return mascota;
+    public List<Mascota> listarMascota() {
+        return mascotas;
     }
 
-    public void eliminarMascota() {
-        this.mascota = null;
+    public void eliminarMascota(Mascota mascota) {
+        mascotas.remove(mascota);
     }
     
 }

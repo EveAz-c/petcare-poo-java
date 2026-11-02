@@ -1,5 +1,5 @@
 package modelo.mascotas;
-import modelo.personas.*;
+import modelo.personas.Dueno;
 
 public class Ave extends Mascota {
     private double longitudAlas;

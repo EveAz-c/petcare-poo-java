@@ -1,4 +1,5 @@
 package modelo.personas;
+import modelo.clinica.Cita;
 
 public class Veterinario extends Persona {
     private String cedulaProfesional;
@@ -28,8 +29,10 @@ public class Veterinario extends Persona {
     }
 
     public void atenderCita(Cita cita) {
-        this.cita = cita;
+        if (cita.getVeterinario() != this) {
+            throw new IllegalArgumentException("La cita no esta asignada a este veterinario.");
+        }
+        cita.atender();
     }
-
     
 }

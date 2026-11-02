@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class Cita {
 
     private LocalDateTime fechaHora;
-    private String estado;
+    private EstadoCita estado;
     private Mascota mascota;
     private Veterinario veterinario;
     private Consultorio consultorio;
@@ -20,27 +20,28 @@ public class Cita {
         this.veterinario = veterinario;
         this.consultorio = consultorio;
         this.servicio = servicio;
-        this.estado = "PROGRAMADA";
+        this.estado = EstadoCita.PROGRAMADA;
+;
     }
 
     public void atender(){
-        if("CANCELADA".equals(this.estado)){
+        if(this.estado == EstadoCita.CANCELADA){
             throw new IllegalStateException("ERROR! No se puede marcar una cita cancelada como atendida");
         }
-        if("ATENDIDA".equals(this.estado)){
+        if(this.estado == EstadoCita.ATENDIDA){
             throw new IllegalStateException("ERROR! No se puede marcar una cita que ya fue atendida");
         }
-        this.estado = "ATENDIDA";
+        this.estado = EstadoCita.ATENDIDA;
     }
 
     public void cancelar(){
-        if("CANCELADA".equals(this.estado)){
+        if(this.estado == EstadoCita.CANCELADA){
             throw new IllegalStateException("ERROR! No se puede marcar una cita que ya esta cancelada");
         }
-        if("ATENDIDA".equals(this.estado)){
+        if(this.estado == EstadoCita.ATENDIDA){
             throw new IllegalStateException("ERROR! No se puede marcar una cita que ya fue atendida");
         }
-        this.estado = "CANCELADA"; 
+        this.estado = EstadoCita.CANCELADA;
     }
 
     public LocalDateTime getFechaHora(){
@@ -51,12 +52,8 @@ public class Cita {
         this.fechaHora = fechaHora;
     }
 
-    public String getEstado(){
+    public EstadoCita getEstado(){
         return estado;
-    }
-
-    public void setEstado(String estado){
-        this.estado = estado;
     }
 
     public Mascota getMascota(){
