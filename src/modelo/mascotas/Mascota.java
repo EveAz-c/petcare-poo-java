@@ -53,6 +53,19 @@ public abstract class Mascota {
         return dueno;
     }
 
+    public HistorialClinico getHistorialClinico() {
+        return historialClinico;
+    }
+
     public abstract void hacerSonido();
+
+    @Override 
+    public String toString(){
+        return "Mascota{" +
+                ", edad=" + edad +
+                ", peso=" + peso +
+                ", dueno=" + dueno.getNombre() + " " + dueno.getApellido() +
+                '}';
+    }
 
 }

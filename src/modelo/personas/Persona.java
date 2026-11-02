@@ -44,4 +44,9 @@ public abstract class Persona {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " [" + nombre + " " + apellido + ", tel: " + telefono + "]";
+    }
 }

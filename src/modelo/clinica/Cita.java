@@ -32,6 +32,7 @@ public class Cita {
             throw new IllegalStateException("ERROR! No se puede marcar una cita que ya fue atendida");
         }
         this.estado = EstadoCita.ATENDIDA;
+        this.mascota.getHistorialClinico().agregarServicio(this.servicio);
     }
 
     public void cancelar(){
@@ -86,6 +87,18 @@ public class Cita {
 
     public void setServicio(Facturable servicio){
         this.servicio = servicio;
+    }
+
+    @Override 
+    public String toString(){
+        return "Cita{" +
+                "fechaHora=" + fechaHora +
+                ", estado=" + estado +
+                ", mascota=" + mascota.getNombre() +
+                ", veterinario=" + veterinario.getNombre() + " " + veterinario.getApellido() +
+                ", consultorio=" + consultorio.getNumero() +
+                ", servicio=" + servicio.getClass().getSimpleName() +
+                '}';
     }
 
 }

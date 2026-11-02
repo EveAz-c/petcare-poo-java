@@ -4,9 +4,13 @@ public class Consultorio {
     private int numero;
     private String descripcion;
 
-    public Consultorio (int numero, String descripcion ){
+    Consultorio (int numero, String descripcion ){
         this.descripcion = descripcion;
         setNumero(numero);
+    }
+    
+    Consultorio (int numero){
+        this(numero, "Consultorio general");
     }
     
     public int getNumero(){
@@ -33,3 +37,4 @@ public class Consultorio {
         return "Consultorio #" + numero + " - " + descripcion;
     }
 }
+

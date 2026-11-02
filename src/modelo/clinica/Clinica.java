@@ -9,7 +9,9 @@ import modelo.servicios.Facturable;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
 
 public class Clinica {
     private String nombre;
@@ -49,6 +51,9 @@ public class Clinica {
     public void registrarMascota(Mascota mascota){
         if(mascota == null){
             throw new IllegalArgumentException("La mascota no puede ser nula");
+        }
+        if(mascota.getDueno() == null){
+            throw new IllegalArgumentException("La mascota debe tener un dueno para poder registrarse");
         }
         mascotas.add(mascota);
         mascota.getDueno().agregarMascota(mascota);
@@ -101,18 +106,15 @@ public class Clinica {
         }
     }
 
-    public void agregarConsultorio(Consultorio consultorio) {
-        if (consultorio == null) {
-            throw new IllegalArgumentException("El consultorio no puede ser nulo");
-        }
-
+    public Consultorio crearConsultorio(int numero, String descripcion) {
+        Consultorio consultorio = new Consultorio(numero, descripcion);
         for (Consultorio c : consultorios) {
             if (c.getNumero() == consultorio.getNumero()) {
                 throw new IllegalArgumentException("Ya existe un consultorio registrado con el numero " + consultorio.getNumero());
             }
         }
-
         this.consultorios.add(consultorio);
+        return consultorio;
     }
 
     public double consultarCobrosPorVeterinario(Veterinario veterinario){
@@ -144,30 +146,37 @@ public class Clinica {
     }
 
     public List<Dueno> getDuenos(){
-        return duenos;
+        return Collections.unmodifiableList(duenos);
     }
 
     public List<Veterinario> getVeterinarios(){
-        return veterinarios;
+        return Collections.unmodifiableList(veterinarios);
     }
 
     public List<Mascota> getMascotas(){
-        return mascotas;
+        return Collections.unmodifiableList(mascotas);
     }
 
     public List<Recepcionista> getRecepcionistas(){
-        return recepcionistas;
+        return Collections.unmodifiableList(recepcionistas);
     }
 
     public List<Consultorio> getConsultorios(){
-        return consultorios;
+        return Collections.unmodifiableList(consultorios);
     }
 
     public List<Cita> getCitas(){
-        return citas;
+        return Collections.unmodifiableList(citas);
     }
 
     public List<Comprobante> getComprobantes(){
-        return comprobantes;
+        return Collections.unmodifiableList(comprobantes);
+    }
+
+    @Override
+    public String toString() {
+        return "Clinica " + nombre + " [" + duenos.size() + " duenos, " + mascotas.size() + " mascotas, "
+            + veterinarios.size() + " veterinarios, " + consultorios.size() + " consultorios, "
+            + citas.size() + " citas]";
     }
 }
