@@ -6,7 +6,7 @@ public class Veterinario extends Persona {
     private String especialidad;
     private Cita cita;
 
-    public Veterinario(String nombre, String apellido, String telefono, String correo, String especialidad, String cedulaProfesional, String horario) {
+    public Veterinario(String nombre, String apellido, String telefono, String correo, String especialidad, String cedulaProfesional) {
         super(nombre, apellido, telefono, correo);
         this.especialidad = especialidad;
         this.cedulaProfesional = cedulaProfesional;

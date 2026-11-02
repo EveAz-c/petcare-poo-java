@@ -5,6 +5,8 @@ import java.time.LocalDate;
 
 
 public class Comprobante {
+    private static int totalGenerados = 0;
+
     private int idComprobante;
     private double total;
     private LocalDate fechaEmision;
@@ -15,6 +17,11 @@ public class Comprobante {
         this.citaAsociada = citaAsociada;
         this.fechaEmision = LocalDate.now();
         this.total = total;
+        totalGenerados++;
+    }
+
+    public static int getTotalGenerados() {
+        return totalGenerados;
     }
 
     public String mostrarDetalle() {

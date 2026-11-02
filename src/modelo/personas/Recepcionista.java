@@ -27,4 +27,8 @@ public class Recepcionista extends Persona {
         return clinica.registrarCita(fechaHora, mascota, veterinario, consultorio, servicio);
     }
 
+    public void registrarMascota(Clinica clinica, Mascota mascota) {
+        clinica.registrarMascota(mascota);
+    }
+
 }
