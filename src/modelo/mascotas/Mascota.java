@@ -62,6 +62,7 @@ public abstract class Mascota {
     @Override 
     public String toString(){
         return "Mascota{" +
+                "nombre='" + nombre + '\'' +
                 ", edad=" + edad +
                 ", peso=" + peso +
                 ", dueno=" + dueno.getNombre() + " " + dueno.getApellido() +
