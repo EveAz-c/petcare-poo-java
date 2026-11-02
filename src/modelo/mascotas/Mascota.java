@@ -10,6 +10,8 @@ public abstract class Mascota {
 
     public Mascota(String nombre, int edad, double peso, Dueno dueno){
         this.nombre = nombre;
+        setEdad(edad);
+        setPeso(peso);
         this.edad = edad;
         this.peso = peso;
         this.dueno = dueno;

@@ -12,7 +12,7 @@ public class Perro extends Mascota {
         this.nivelEnergia = nivelEnergia;
     }
 
-    public String raza(){
+    public String getRaza(){
         return raza;
     }
 
@@ -20,7 +20,7 @@ public class Perro extends Mascota {
         this.raza = raza;
     }
 
-    public String nivelEnergia(){
+    public String getNivelEnergia(){
         return nivelEnergia;
     }
 

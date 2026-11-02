@@ -6,6 +6,7 @@ public class Consultorio {
 
     public Consultorio (int numero, String descripcion ){
         this.descripcion = descripcion;
+        setNumero(numero);
     }
     
     public int getNumero(){
