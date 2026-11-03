@@ -22,12 +22,6 @@
 | Cirugia | concreta | - complejidad: String<br>- horasQuirofano: double | - calcularCosto()<br>- getComplejidad(), setComplejidad()<br>- getHorasQuirofano(), setHorasQuirofano()<br>- toString() | Modela los procedimientos quirúrgicos implementando Facturable; su costo depende de las horas de quirófano y del nivel de complejidad. |
 | Comprobante | concreta | - totalGenerados: int (static)<br>- idComprobante: int<br>- total: double<br>- fechaEmision: LocalDate<br>- citaAsociada: Cita | - getTotalGenerados() (static)<br>- mostrarDetalle()<br>- getIdComprobante(), setIdComprobante()<br>- getTotal(), setTotal()<br>- getFechaEmision(), setFechaEmision()<br>- getCitaAsociada(), setCitaAsociada()<br>- toString() | Almacena y muestra el recibo de una cita atendida. Lo crea Clinica.generarComprobante(), que le pasa el total ya calculado con el costo del servicio. El contador estático cuenta cuántos comprobantes se han creado. |
 | Facturable | interfaz | ninguno | - calcularCosto(): double | Define el contrato común para que cualquier servicio médico (ConsultaGeneral, Vacunacion, Cirugia) deba implementar obligatoriamente el cálculo de su costo. |
-<<<<<<< Updated upstream
-| Main | concreta | - ENTRADA: Scanner (static)<br>- FORMATO_FECHA: DateTimeFormatter (static)<br>- CLINICA: Clinica (static) | - main(String[] args)<br>- mostrarMenu()<br>- ejecutarOpcion(int)<br>- un método privado por cada opción del menú<br>- métodos de lectura de datos validados | Clase ejecutable que gestiona el flujo del sistema mediante un bucle de menú. Solo pide datos y llama al modelo; captura las excepciones del modelo y muestra su mensaje sin cerrar el programa. |
-=======
-<<<<<<< Updated upstream
-| Main | concreta | (Variables estáticas de control y colecciones en memoria) | - main(String[] args)<br>- mostrarMenu() | Clase principal ejecutable que gestiona el flujo del sistema mediante un bucle de menús y validaciones en consola. |
-=======
 | Main | concreta | - ENTRADA: Scanner (static)<br>- FORMATO_FECHA: DateTimeFormatter (static)<br>- CLINICA: Clinica (static) | - main(String[] args)<br>- mostrarMenu()<br>- ejecutarOpcion(int)<br>- un método privado por cada opción del menú<br>- métodos de lectura de datos validados | Clase ejecutable que gestiona el flujo del sistema mediante un bucle de menú. Solo pide datos y llama al modelo; captura las excepciones del modelo y muestra su mensaje sin cerrar el programa. |
 
 ## 2. Objetos de ejemplo
@@ -64,5 +58,3 @@ La pregunta que decidió el tipo de cada relación fue: **¿qué pasa con una de
 | Clinica ◇— Dueno, Mascota y Recepcionista | Agregación | Clinica (1) — (0..*) | Igual que los veterinarios, llegan creados desde afuera y la clínica solo los agrupa en sus listas. |
 | Clinica ◆— Consultorio | Composición | Clinica (1) — (1..*) consultorios | La clínica crea sus consultorios (crearConsultorio) y nadie más puede hacerlo porque el constructor es de paquete. Si la clínica desaparece, los consultorios también, y no se comparten con otra clínica. |
 | Mascota ◆— HistorialClinico | Composición | Mascota (1) — (1) historialClinico | El historial se crea dentro del constructor de Mascota y no tiene sentido sin ella. Al dar de baja la mascota ya nada apunta al historial y el recolector de basura lo libera junto con ella. |
->>>>>>> Stashed changes
->>>>>>> Stashed changes

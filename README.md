@@ -134,7 +134,7 @@ javac -version
 **1. Clonar el repositorio**
 
 ```bash
-git clone https://github.com/<tu-usuario>/petcare-poo-java.git
+git clone https://github.com/EveAz-c/petcare-poo-java.git
 cd petcare-poo-java
 ```
 
