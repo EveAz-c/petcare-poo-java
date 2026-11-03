@@ -21,13 +21,13 @@ PetCare administra una clínica veterinaria desde un menú de consola. Permite r
 | Herramienta | Uso |
 | --- | --- |
 | Java 17 o superior (probado con Java 21) | Lenguaje del proyecto |
-| **(Draw.io)** | Diagrama de clase |
-| **(VS Code)** | Edición y ejecución del código |
-| Git,GitHub y Git Desktop| Control de versiones |
+| Draw.io | Diagrama de clases UML |
+| VS Code | Edición y ejecución del código |
+| Git, GitHub y GitHub Desktop | Control de versiones |
 
 ## Modelo de la solución
 
-![Diagrama de clases de PetCare](docs/diagramas/diagrama-clases.png)
+![Diagrama de clases de PetCare](docs/Diagramas/DiagramPetCare.drawio.png)
 
 El análisis completo (tabla de clases, objetos de ejemplo, clases descartadas y justificación de relaciones) está en [`docs/analisis.md`](docs/analisis.md). Estas son las decisiones principales:
 
@@ -44,7 +44,7 @@ El análisis completo (tabla de clases, objetos de ejemplo, clases descartadas y
 
 **Agregación.** `Clinica` agrupa veterinarios (también dueños, mascotas y recepcionistas) que se crean fuera de ella y se le entregan ya hechos. Si la clínica desaparece, el veterinario sigue existiendo y podría trabajar en otra.
 
-**Composición.** 
+**Composición.**
 
 - `Clinica` crea y posee sus `Consultorio` (con `crearConsultorio()`); sus constructores son de paquete para que nadie más pueda crearlos.
 - `Mascota` crea y posee su `HistorialClinico` dentro de su constructor. Al dar de baja la mascota, el historial se va con ella.
@@ -57,8 +57,8 @@ petcare-poo-java/
 ├── .gitignore
 ├── docs/
 │   ├── analisis.md
-│   ├── diagramas/
-│   └── capturas/
+│   ├── Diagramas/
+│   └── Capturas/
 └── src/
     ├── app/
     │   └── Main.java
@@ -105,7 +105,7 @@ petcare-poo-java/
 | Método abstracto | `Mascota.java:121` (`hacerSonido()`), implementado en `Perro.java:69`, `Gato.java:48` y `Ave.java:47` |
 | Interfaz | `Facturable.java:6`; implementada en `ConsultaGeneral.java:7`, `Vacunacion.java:7` y `Cirugia.java:7` |
 | Polimorfismo con `List<Mascota>` | `Main.java:241-250` (opción 7, llama a `hacerSonido()`) |
-| Polimorfismo con `List<Facturable>` | `HistorialClinico.java:77-83` y `Clinica.java:201-209`, suman costos sin usar `instanceof` |
+| Polimorfismo con `List<Facturable>` | `HistorialClinico.java:77-83` (`calcularCostoTotal()` recorre una `List<Facturable>` y suma costos sin usar `instanceof`) |
 | Sobreescritura (`@Override`) | `toString()` en `Persona.java:113`, `Mascota.java:128`, `Cita.java:179`, `Comprobante.java:132`; `calcularCosto()` en `Cirugia.java:29` |
 | Sobrecarga | Constructores de `HistorialClinico.java:18` y `:27`; método `mostrarHistorial()` en `HistorialClinico.java:50` y `:59`; constructores de `Consultorio.java:19` y `:31` |
 | Constructor por defecto y constructor con datos | `HistorialClinico.java:18` (vacío) y `:27` (recibe la lista) |
@@ -144,14 +144,14 @@ Linux o macOS:
 
 ```bash
 mkdir -p out
-javac -d out $(find src -name "*.java")
+javac -encoding UTF-8 -d out $(find src -name "*.java")
 ```
 
 Windows (PowerShell):
 
 ```powershell
 mkdir out
-javac -d out (Get-ChildItem -Recurse -Filter *.java src).FullName
+javac -encoding UTF-8 -d out (Get-ChildItem -Recurse -Filter *.java src).FullName
 ```
 
 **3. Ejecutar**
@@ -166,83 +166,83 @@ Debe aparecer el menú de la clínica. Para terminar, elige la opción **10**.
 
 ## Ejemplo de uso
 
-Esta es la ejecución del escenario de demostración. La clínica arranca con una recepcionista y dos consultorios ya creados (consultorio 1, "Consulta general", y consultorio 2, "Cirugia y vacunacion"). Las capturas están en [`docs/capturas/`](docs/capturas/).
+Esta es la ejecución del escenario de demostración. La clínica arranca con una recepcionista y dos consultorios ya creados (consultorio 1, "Consulta general", y consultorio 2, "Cirugia y vacunacion"). Las capturas están en [`docs/Capturas/`](docs/Capturas/).
 
 **Menú principal**
 
-![Menú principal](docs/capturas/01_menu_principal.png)
+![Menú principal](docs/Capturas/01_menu_principal.png)
 
 **Validación de entradas incorrectas.** Texto donde se espera un número, una opción fuera del menú, un dato vacío y una edad inválida; el programa muestra el mensaje al final y sigue funcionando.
 
-![Validación de entradas](docs/capturas/02_validacion_de_entradas.png)
+![Validación de entradas](docs/Capturas/02_validacion_de_entradas.png)
 
 ### 1. Registrar dos dueños y tres mascotas (perro, gato y ave)
 
 Carlos Ramirez registra a Max (perro) y a Misu (gato); Ana Torres registra a Pico (ave).
 
-![Dueño con perro y gato](docs/capturas/03_registro_dueno_max_y_misu.png)
+![Dueño con perro y gato](docs/Capturas/03_registro_dueno_max_y_misu.png)
 
-![Dueño con ave](docs/capturas/04_registro_dueno_pico.png)
+![Dueño con ave](docs/Capturas/04_registro_dueno_pico.png)
 
 ### 2. Registrar dos veterinarios
 
-![Registro de veterinarios](docs/capturas/05_registro_veterinarios.png)
+![Registro de veterinarios](docs/Capturas/05_registro_veterinarios.png)
 
 ### 3. Agendar tres citas y atender dos
 
 Se agenda una consulta general, una vacunación y una cirugía.
 
-![Cita de consulta general](docs/capturas/06_agendar_cita_consulta.png)
+![Cita de consulta general](docs/Capturas/06_agendar_cita_consulta.png)
 
-![Cita de vacunación](docs/capturas/07_agendar_cita_vacunacion.png)
+![Cita de vacunación](docs/Capturas/07_agendar_cita_vacunacion.png)
 
-![Cita de cirugía](docs/capturas/08_agendar_cita_cirugia.png)
+![Cita de cirugía](docs/Capturas/08_agendar_cita_cirugia.png)
 
 Se atienden la consulta de Max y la cirugía de Pico, en cada servicio calcula su costo de forma distinta. La consulta cobra el costo capturado $350.0 y la cirugía depende de las horas de quirófano y de la complejidad (1.5 horas × $1,200 × 2.0 por complejidad ALTA = $3,600.0).
 
-![Atender citas](docs/capturas/12_atender_citas.png)
+![Atender citas](docs/Capturas/12_atender_citas.png)
 
 Al atender una cita se genera su comprobante con el total:
 
-![Comprobantes](docs/capturas/13_comprobantes.png)
+![Comprobantes](docs/Capturas/13_comprobantes.png)
 
 ### 4. Intentar agendar una cita que viole una regla de negocio
 
 Veterinario con dos citas a la misma hora:
 
-![Error: veterinario ocupado](docs/capturas/09_error_veterinario_ocupado.png)
+![Error: veterinario ocupado](docs/Capturas/09_error_veterinario_ocupado.png)
 
 Consultorio usado en dos citas a la vez:
 
-![Error: consultorio ocupado](docs/capturas/10_error_consultorio_ocupado.png)
+![Error: consultorio ocupado](docs/Capturas/10_error_consultorio_ocupado.png)
 
 Costo negativo:
 
-![Error: costo negativo](docs/capturas/11_error_costo_negativo.png)
+![Error: costo negativo](docs/Capturas/11_error_costo_negativo.png)
 
 ### 5. Listar las mascotas llamando a `hacerSonido()` (polimorfismo)
 
-![Listar mascotas y su sonido](docs/capturas/14_listar_mascotas_y_sonido.png)
+![Listar mascotas y su sonido](docs/Capturas/14_listar_mascotas_y_sonido.png)
 
 ### 6. Mostrar el total cobrado y consultar un historial clínico
 
-![Total cobrado por veterinario](docs/capturas/15_total_por_veterinario.png)
+![Total cobrado por veterinario](docs/Capturas/15_total_por_veterinario.png)
 
-![Historial clínico](docs/capturas/16_historial_clinico.png)
+![Historial clínico](docs/Capturas/16_historial_clinico.png)
 
 ### Extras
 
 Se atiende la tercera cita (vacunación $250.0), con lo que se comprueban los tres tipos de servicio, y el total de la Dra. Mendez sube a $600.0.
 
-![Atender la vacunación](docs/capturas/17_extra_atender_vacunacion.png)
+![Atender la vacunación](docs/Capturas/17_extra_atender_vacunacion.png)
 
 Dar de baja una mascota (Misu) la quita de la clínica y de la lista de su dueño; después ya no aparece al listar.
 
-![Dar de baja una mascota](docs/capturas/18_dar_de_baja_mascota.png)
+![Dar de baja una mascota](docs/Capturas/18_dar_de_baja_mascota.png)
 
 Salir del programa:
 
-![Salir](docs/capturas/19_salir.png)
+![Salir](docs/Capturas/19_salir.png)
 
 ## Reglas de negocio
 
@@ -259,16 +259,16 @@ Además, `Main` captura las excepciones del modelo en `ejecutarOpcion()` (`Main.
 
 ## Reflexión
 
-> Es un sistema bastante complejo, lo vi bastante sencillo en un inicio pero al final no lo fue. Requirio investigar bastante ya que no sabía como desarrollar varias cosas. Pero fue bastante entretenido ver como se iban acoplando unas con otras cosas mientras las iba desarrollando, tambien fue muy estresante ver que por más que intentará seguia saliendo algunos errores. Todavia quedo bastante por corregir, pero creo que cumple lo esperado.
+> Es un sistema bastante complejo, lo vi bastante sencillo en un inicio pero al final no lo fue. Requirió investigar bastante ya que no sabía cómo desarrollar varias cosas. Pero fue bastante entretenido ver cómo se iban acoplando unas con otras cosas mientras las iba desarrollando, también fue muy estresante ver que por más que intentara seguían saliendo algunos errores. Todavía queda bastante por corregir, pero creo que cumple lo esperado.
 
-**Uso de la IA.** Usé la IA (Claude) como apoyo para poder organizar el como iba a desarrollar el proyecto/examen, tambien para que me fuera diciendo que me iba faltando segun como iba avanzando en la creación ya que me iba poniendo pruebas y así tambien me ayudaba diciendome que estaba fallando. Tambien lo use en la busqueda de información como el como tambien poner la información de los documentos y que se viera más presentable y que se entendiera mejor la información añadiendole algunas cosas caracteristicas.
+**Uso de la IA.** Usé la IA (Claude) como apoyo para poder organizar el cómo iba a desarrollar el proyecto/examen, también para que me fuera diciendo qué me iba faltando según cómo iba avanzando en la creación, ya que me iba poniendo pruebas y así también me ayudaba diciéndome qué estaba fallando. También lo usé en la búsqueda de información, como el cómo, también para poner la información de los documentos y que se viera más presentable y que se entendiera mejor la información, añadiéndole algunas cosas características.
 
-**Lo que aprendí.** *Creo que una de las cosas que más aprendí aquí fue el uso de las listas, ya que las creaba en una clase pero en pruebas aparecía que no guardaban nada, que hay veces que pongo validación pero que no solo se debe poner ahí.*
+**Lo que aprendí.** Creo que una de las cosas que más aprendí aquí fue el uso de las listas, ya que las creaba en una clase pero en pruebas aparecía que no guardaban nada, que hay veces que pongo validación pero que no solo se debe poner ahí.
 
-**Lo más difícil.** *(Entre lo mas dificil para mi, fue la parte de organización en lo que tuve que ocupar bastante ayuda, ya que se me olvidaba que me iba faltando, tambien varias cosas que iba agregando y que en las pruebas que le pedia al asistente que hiciera me decia que estaba mal. por lo que ver esos "pequeños detalles", que realmente terminaron siendo más grandes y que varias de esas cosas no las sabia hacer y tenia que estar buscando como hacerlas y me quitaba bastante tiempo el estar buscando como tenia que quedar. Creo que fue lo más dificil.)*
+**Lo más difícil.** Entre lo más difícil para mí, fue la parte de organización, en la que tuve que ocupar bastante ayuda, ya que se me olvidaba qué me iba faltando, también varias cosas que iba agregando y que en las pruebas que le pedía al asistente que hiciera me decía que estaban mal, por lo que ver esos "pequeños detalles", que realmente terminaron siendo más grandes, y que varias de esas cosas no las sabía hacer y tenía que estar buscando cómo hacerlas, me quitaba bastante tiempo el estar buscando cómo tenía que quedar. Creo que fue lo más difícil.
 
-**Qué mejoraría.** *(Mejoraria el orden en el que fui desarrollando las cosas, ya que a pesar de que al inicio si entendia e iba bastante bien siguiendo mis reglas, a veces me perdia en lo que iba. Entonces creo que buscaria mejor el modo ver de que manera iniciar a poner mi codigo para buscar lo siguiente que haré.)*
+**Qué mejoraría.** Mejoraría el orden en el que fui desarrollando las cosas, ya que a pesar de que al inicio sí entendía e iba bastante bien siguiendo mis reglas, a veces me perdía en lo que iba. Entonces creo que buscaría mejor el modo de ver de qué manera iniciar a poner mi código para buscar lo siguiente que haré.
 
 ## Autor
 
-**Eveln Perez Uscanga** — [https://github.com/EveAz-c](https://github.com/EveAz-c)
+**Evelyn Pérez Uscanga** — [https://github.com/EveAz-c](https://github.com/EveAz-c)
