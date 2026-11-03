@@ -1,0 +1,582 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="J6Wl5DbRE93hqwaIdioV">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="20000" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pkg_app" parent="1" style="shape=folder;fontStyle=1;tabWidth=150;tabHeight=22;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=8;spacingTop=26;fontSize=13;container=1;collapsible=0;recursiveResize=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;fontColor=#333333;" value="«package» app" vertex="1">
+          <mxGeometry height="575" width="432" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Main" parent="pkg_app" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Main" vertex="1">
+          <mxGeometry height="489" width="380" x="26" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Main_a" parent="cls_Main" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="&lt;u&gt;- OPCION_SALIR: int&lt;/u&gt;&lt;br&gt;&lt;u&gt;- ENTRADA: Scanner&lt;/u&gt;&lt;br&gt;&lt;u&gt;- CLINICA: Clinica&lt;/u&gt;" vertex="1">
+          <mxGeometry height="55" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Main_d" parent="cls_Main" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="81" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Main_m" parent="cls_Main" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="&lt;u&gt;+ main(args: String[]): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- prepararClinica(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- mostrarMenu(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- ejecutarOpcion(opcion: int): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- registrarDuenoYMascota(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- registrarMascotaEnClinica(mascota: Mascota): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- leerMascota(dueno: Dueno): Mascota&lt;/u&gt;&lt;br&gt;&lt;u&gt;- registrarVeterinario(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- agendarCita(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- atenderOCancelarCita(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- generarComprobante(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- consultarHistorial(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- listarMascotas(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- verTotalPorVeterinario(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- darDeBajaMascota(): void&lt;/u&gt;&lt;br&gt;&lt;u&gt;- primeraRecepcionista(): Recepcionista&lt;/u&gt;&lt;br&gt;&lt;u&gt;- citasConEstado(estado: EstadoCita): List&amp;lt;Cita&amp;gt;&lt;/u&gt;&lt;br&gt;&lt;u&gt;- leerServicio(): Facturable&lt;/u&gt;&lt;br&gt;&lt;u&gt;- seleccionar(titulo: String, elementos: List&amp;lt;T&amp;gt;): &amp;lt;T&amp;gt; T&lt;/u&gt;&lt;br&gt;&lt;u&gt;- leerTexto(mensaje: String): String&lt;/u&gt;&lt;br&gt;&lt;u&gt;- leerEntero(mensaje: String): int&lt;/u&gt;&lt;br&gt;&lt;u&gt;- leerEnteroEnRango(mensaje: String, minimo: int, maximo: int): int&lt;/u&gt;&lt;br&gt;&lt;u&gt;- leerDecimal(mensaje: String): double&lt;/u&gt;&lt;br&gt;&lt;u&gt;- leerSiNo(mensaje: String): boolean&lt;/u&gt;&lt;br&gt;&lt;u&gt;- leerFechaHora(mensaje: String): LocalDateTime&lt;/u&gt;" vertex="1">
+          <mxGeometry height="400" width="380" y="89" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_clinica" parent="1" style="shape=folder;fontStyle=1;tabWidth=150;tabHeight=22;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=8;spacingTop=26;fontSize=13;container=1;collapsible=0;recursiveResize=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;fontColor=#333333;" value="«package» modelo.clinica" vertex="1">
+          <mxGeometry height="775" width="1106" x="592" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Clinica" parent="pkg_clinica" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Clinica" vertex="1">
+          <mxGeometry height="504" width="380" x="26" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Clinica_a" parent="cls_Clinica" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- nombre: String&lt;br&gt;- duenos: List&amp;lt;Dueno&amp;gt;&lt;br&gt;- veterinarios: List&amp;lt;Veterinario&amp;gt;&lt;br&gt;- mascotas: List&amp;lt;Mascota&amp;gt;&lt;br&gt;- recepcionistas: List&amp;lt;Recepcionista&amp;gt;&lt;br&gt;- consultorios: List&amp;lt;Consultorio&amp;gt;&lt;br&gt;- citas: List&amp;lt;Cita&amp;gt;&lt;br&gt;- comprobantes: List&amp;lt;Comprobante&amp;gt;" vertex="1">
+          <mxGeometry height="130" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Clinica_d" parent="cls_Clinica" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Clinica_m" parent="cls_Clinica" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ Clinica(nombre: String)&lt;br&gt;+ registrarDueno(dueno: Dueno): void&lt;br&gt;+ agregarVeterinario(veterinario: Veterinario): void&lt;br&gt;+ registrarMascota(mascota: Mascota): void&lt;br&gt;+ darDeBajaMascota(mascota: Mascota): void&lt;br&gt;+ generarComprobante(cita: Cita): Comprobante&lt;br&gt;+ agregarRecepcionista(recepcionista: Recepcionista): void&lt;br&gt;+ crearConsultorio(numero: int, descripcion: String): Consultorio&lt;br&gt;+ consultarCobrosPorVeterinario(veterinario: Veterinario): double&lt;br&gt;+ consultarCobrosPorMascota(mascota: Mascota): double&lt;br&gt;+ getNombre(): String&lt;br&gt;+ setNombre(nombre: String): void&lt;br&gt;+ getDuenos(): List&amp;lt;Dueno&amp;gt;&lt;br&gt;+ getVeterinarios(): List&amp;lt;Veterinario&amp;gt;&lt;br&gt;+ getMascotas(): List&amp;lt;Mascota&amp;gt;&lt;br&gt;+ getRecepcionistas(): List&amp;lt;Recepcionista&amp;gt;&lt;br&gt;+ getConsultorios(): List&amp;lt;Consultorio&amp;gt;&lt;br&gt;+ getCitas(): List&amp;lt;Cita&amp;gt;&lt;br&gt;+ getComprobantes(): List&amp;lt;Comprobante&amp;gt;&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="340" width="380" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Cita" parent="pkg_clinica" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Cita" vertex="1">
+          <mxGeometry height="354" width="310" x="436" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Cita_a" parent="cls_Cita" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- fechaHora: LocalDateTime&lt;br&gt;- estado: EstadoCita&lt;br&gt;- mascota: Mascota&lt;br&gt;- veterinario: Veterinario&lt;br&gt;- consultorio: Consultorio&lt;br&gt;- servicio: Facturable" vertex="1">
+          <mxGeometry height="100" width="310" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Cita_d" parent="cls_Cita" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="310" y="126" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Cita_m" parent="cls_Cita" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ atender(): void&lt;br&gt;+ cancelar(): void&lt;br&gt;+ getFechaHora(): LocalDateTime&lt;br&gt;+ setFechaHora(fechaHora: LocalDateTime): void&lt;br&gt;+ getEstado(): EstadoCita&lt;br&gt;+ getMascota(): Mascota&lt;br&gt;+ setMascota(mascota: Mascota): void&lt;br&gt;+ getVeterinario(): Veterinario&lt;br&gt;+ setVeterinario(veterinario: Veterinario): void&lt;br&gt;+ getConsultorio(): Consultorio&lt;br&gt;+ setConsultorio(consultorio: Consultorio): void&lt;br&gt;+ getServicio(): Facturable&lt;br&gt;+ setServicio(servicio: Facturable): void&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="220" width="310" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Consultorio" parent="pkg_clinica" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Consultorio" vertex="1">
+          <mxGeometry height="189" width="304" x="776" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Consultorio_a" parent="cls_Consultorio" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- numero: int&lt;br&gt;- descripcion: String" vertex="1">
+          <mxGeometry height="40" width="304" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Consultorio_d" parent="cls_Consultorio" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="304" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Consultorio_m" parent="cls_Consultorio" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="~ Consultorio(numero: int, descripcion: String)&lt;br&gt;~ Consultorio(numero: int)&lt;br&gt;+ getNumero(): int&lt;br&gt;+ setNumero(numero: int): void&lt;br&gt;+ getDescripcion(): String&lt;br&gt;+ setDescripcion(descripcion: String): void&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="115" width="304" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_EstadoCita" parent="pkg_clinica" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="&lt;span style=&quot;font-weight:normal&quot;&gt;«enumeration»&lt;/span&gt;&lt;br&gt;EstadoCita" vertex="1">
+          <mxGeometry height="115" width="190" x="658" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_EstadoCita_a" parent="cls_EstadoCita" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="PROGRAMADA&lt;br&gt;ATENDIDA&lt;br&gt;CANCELADA" vertex="1">
+          <mxGeometry height="55" width="190" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_EstadoCita_d" parent="cls_EstadoCita" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="190" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_EstadoCita_m" parent="cls_EstadoCita" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="" vertex="1">
+          <mxGeometry height="12" width="190" y="103" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="pkg_clinica" source="cls_Cita" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Consultorio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14s" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14t" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1 consultorio" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="pkg_clinica" source="cls_Cita" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_EstadoCita">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16s" connectable="0" parent="e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16t" connectable="0" parent="e16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1 estado" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="pkg_clinica" source="cls_Clinica" style="startArrow=diamondThin;startFill=1;startSize=18;endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Consultorio">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="928" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20s" connectable="0" parent="e20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8188" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20t" connectable="0" parent="e20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..* consultorios" vertex="1">
+          <mxGeometry relative="1" x="0.8382" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="pkg_clinica" source="cls_Clinica" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Cita">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e23s" connectable="0" parent="e23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23t" connectable="0" parent="e23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..* citas" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pkg_personas" parent="1" style="shape=folder;fontStyle=1;tabWidth=150;tabHeight=22;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=8;spacingTop=26;fontSize=13;container=1;collapsible=0;recursiveResize=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;fontColor=#333333;" value="«package» modelo.personas" vertex="1">
+          <mxGeometry height="594" width="1112" x="40" y="935" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Persona" parent="pkg_personas" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Persona" vertex="1">
+          <mxGeometry height="279" width="380" x="366" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Persona_a" parent="cls_Persona" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="# nombre: String&lt;br&gt;# apellido: String&lt;br&gt;# telefono: String&lt;br&gt;# correo: String" vertex="1">
+          <mxGeometry height="70" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Persona_d" parent="cls_Persona" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Persona_m" parent="cls_Persona" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ Persona(nombre: String, apellido: String, telefono: String, correo: String)&lt;br&gt;+ getNombre(): String&lt;br&gt;+ setNombre(nombre: String): void&lt;br&gt;+ getApellido(): String&lt;br&gt;+ setApellido(apellido: String): void&lt;br&gt;+ getTelefono(): String&lt;br&gt;+ setTelefono(telefono: String): void&lt;br&gt;+ getCorreo(): String&lt;br&gt;+ setCorreo(correo: String): void&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="175" width="380" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Dueno" parent="pkg_personas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Dueno" vertex="1">
+          <mxGeometry height="159" width="268" x="26" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Dueno_a" parent="cls_Dueno" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- direccion: String&lt;br&gt;- mascotas: List&amp;lt;Mascota&amp;gt;" vertex="1">
+          <mxGeometry height="40" width="268" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Dueno_d" parent="cls_Dueno" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="268" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Dueno_m" parent="cls_Dueno" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ getDireccion(): String&lt;br&gt;+ setDireccion(direccion: String): void&lt;br&gt;+ agregarMascota(mascota: Mascota): void&lt;br&gt;+ listarMascotas(): List&amp;lt;Mascota&amp;gt;&lt;br&gt;+ eliminarMascota(mascota: Mascota): void" vertex="1">
+          <mxGeometry height="85" width="268" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Veterinario" parent="pkg_personas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Veterinario" vertex="1">
+          <mxGeometry height="159" width="352" x="324" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Veterinario_a" parent="cls_Veterinario" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- cedulaProfesional: String&lt;br&gt;- especialidad: String" vertex="1">
+          <mxGeometry height="40" width="352" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Veterinario_d" parent="cls_Veterinario" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="352" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Veterinario_m" parent="cls_Veterinario" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ getCedulaProfesional(): String&lt;br&gt;+ setCedulaProfesional(cedulaProfesional: String): void&lt;br&gt;+ getEspecialidad(): String&lt;br&gt;+ setEspecialidad(especialidad: String): void&lt;br&gt;+ atenderCita(cita: Cita): void" vertex="1">
+          <mxGeometry height="85" width="352" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Recepcionista" parent="pkg_personas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Recepcionista" vertex="1">
+          <mxGeometry height="114" width="380" x="706" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Recepcionista_a" parent="cls_Recepcionista" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- turno: String" vertex="1">
+          <mxGeometry height="25" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Recepcionista_d" parent="cls_Recepcionista" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="51" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Recepcionista_m" parent="cls_Recepcionista" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ getTurno(): String&lt;br&gt;+ setTurno(turno: String): void&lt;br&gt;+ registrarMascota(clinica: Clinica, mascota: Mascota): void" vertex="1">
+          <mxGeometry height="55" width="380" y="59" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="pkg_personas" source="cls_Dueno" style="endArrow=block;endSize=14;endFill=0;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Persona">
+          <mxGeometry relative="1" x="-0.166" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="585" />
+              <mxPoint x="690" y="585" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="pkg_personas" source="cls_Veterinario" style="endArrow=block;endSize=14;endFill=0;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Persona">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="pkg_personas" source="cls_Recepcionista" style="endArrow=block;endSize=14;endFill=0;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Persona">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="896" y="355" />
+              <mxPoint x="556" y="355" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pkg_mascotas" parent="1" style="shape=folder;fontStyle=1;tabWidth=150;tabHeight=22;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=8;spacingTop=26;fontSize=13;container=1;collapsible=0;recursiveResize=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;fontColor=#333333;" value="«package» modelo.mascotas" vertex="1">
+          <mxGeometry height="868" width="1164" x="1272" y="935" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Mascota" parent="pkg_mascotas" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Mascota" vertex="1">
+          <mxGeometry height="309" width="380" x="392" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Mascota_a" parent="cls_Mascota" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="# nombre: String&lt;br&gt;# edad: int&lt;br&gt;# peso: double&lt;br&gt;# dueno: Dueno&lt;br&gt;# historialClinico: HistorialClinico" vertex="1">
+          <mxGeometry height="85" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Mascota_d" parent="cls_Mascota" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="111" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Mascota_m" parent="cls_Mascota" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ Mascota(nombre: String, edad: int, peso: double, dueno: Dueno)&lt;br&gt;+ getNombre(): String&lt;br&gt;+ setNombre(nombre: String): void&lt;br&gt;+ getEdad(): int&lt;br&gt;+ setEdad(edad: int): void&lt;br&gt;+ getPeso(): double&lt;br&gt;+ setPeso(peso: double): void&lt;br&gt;+ getDueno(): Dueno&lt;br&gt;+ getHistorialClinico(): HistorialClinico&lt;br&gt;&lt;i&gt;+ hacerSonido(): void&lt;/i&gt;&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="190" width="380" y="119" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Perro" parent="pkg_mascotas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Perro" vertex="1">
+          <mxGeometry height="159" width="292" x="26" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Perro_a" parent="cls_Perro" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- raza: String&lt;br&gt;- nivelEnergia: String" vertex="1">
+          <mxGeometry height="40" width="292" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Perro_d" parent="cls_Perro" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="292" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Perro_m" parent="cls_Perro" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ getRaza(): String&lt;br&gt;+ setRaza(raza: String): void&lt;br&gt;+ getNivelEnergia(): String&lt;br&gt;+ setNivelEnergia(nivelEnergia: String): void&lt;br&gt;+ hacerSonido(): void" vertex="1">
+          <mxGeometry height="85" width="292" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Gato" parent="pkg_mascotas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Gato" vertex="1">
+          <mxGeometry height="144" width="380" x="348" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Gato_a" parent="cls_Gato" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- domestico: boolean" vertex="1">
+          <mxGeometry height="25" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Gato_d" parent="cls_Gato" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="51" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Gato_m" parent="cls_Gato" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ Gato(esDomestico: boolean, nombre: String, edad: int, peso: double, dueno: Dueno)&lt;br&gt;+ isDomestico(): boolean&lt;br&gt;+ setDomestico(domestico: boolean): void&lt;br&gt;+ hacerSonido(): void" vertex="1">
+          <mxGeometry height="85" width="380" y="59" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Ave" parent="pkg_mascotas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Ave" vertex="1">
+          <mxGeometry height="144" width="380" x="758" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Ave_a" parent="cls_Ave" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- longitudAlas: double" vertex="1">
+          <mxGeometry height="25" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Ave_d" parent="cls_Ave" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="51" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Ave_m" parent="cls_Ave" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ Ave(longitudAlas: double, nombre: String, edad: int, peso: double, dueno: Dueno)&lt;br&gt;+ getLongitudAlas(): double&lt;br&gt;+ setLongitudAlas(longitudAlas: double): void&lt;br&gt;+ hacerSonido(): void" vertex="1">
+          <mxGeometry height="85" width="380" y="59" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_HistorialClinico" parent="pkg_mascotas" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="HistorialClinico" vertex="1">
+          <mxGeometry height="174" width="364" x="400" y="664" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_HistorialClinico_a" parent="cls_HistorialClinico" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- serviciosRealizados: List&amp;lt;Facturable&amp;gt;" vertex="1">
+          <mxGeometry height="25" width="364" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_HistorialClinico_d" parent="cls_HistorialClinico" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="364" y="51" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_HistorialClinico_m" parent="cls_HistorialClinico" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ HistorialClinico()&lt;br&gt;+ HistorialClinico(serviciosRealizados: List&amp;lt;Facturable&amp;gt;)&lt;br&gt;+ agregarServicio(servicio: Facturable): void&lt;br&gt;+ mostrarHistorial(): void&lt;br&gt;+ mostrarHistorial(ultimos: int): void&lt;br&gt;+ calcularCostoTotal(): double&lt;br&gt;+ getServiciosRealizados(): List&amp;lt;Facturable&amp;gt;" vertex="1">
+          <mxGeometry height="115" width="364" y="59" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="pkg_mascotas" source="cls_Perro" style="endArrow=block;endSize=14;endFill=0;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Mascota">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="172" y="615" />
+              <mxPoint x="582" y="615" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="pkg_mascotas" source="cls_Gato" style="endArrow=block;endSize=14;endFill=0;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Mascota">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="pkg_mascotas" source="cls_Ave" style="endArrow=block;endSize=14;endFill=0;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Mascota">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="pkg_mascotas" source="cls_Mascota" style="startArrow=diamondThin;startFill=1;startSize=18;endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_HistorialClinico">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10s" connectable="0" parent="e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10t" connectable="0" parent="e10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1 historialClinico" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pkg_servicios" parent="1" style="shape=folder;fontStyle=1;tabWidth=150;tabHeight=22;tabPosition=left;html=1;whiteSpace=wrap;verticalAlign=top;align=left;spacingLeft=8;spacingTop=26;fontSize=13;container=1;collapsible=0;recursiveResize=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;fontColor=#333333;" value="«package» modelo.servicios" vertex="1">
+          <mxGeometry height="565" width="1600" x="240" y="1923" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Facturable" parent="pkg_servicios" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="&lt;span style=&quot;font-weight:normal&quot;&gt;«interface»&lt;/span&gt;&lt;br&gt;Facturable" vertex="1">
+          <mxGeometry height="85" width="190" x="705" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Facturable_a" parent="cls_Facturable" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="" vertex="1">
+          <mxGeometry height="12" width="190" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Facturable_d" parent="cls_Facturable" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="190" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Facturable_m" parent="cls_Facturable" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="&lt;i&gt;+ calcularCosto(): double&lt;/i&gt;" vertex="1">
+          <mxGeometry height="25" width="190" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_ConsultaGeneral" parent="pkg_servicios" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="ConsultaGeneral" vertex="1">
+          <mxGeometry height="249" width="380" x="26" y="211" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_ConsultaGeneral_a" parent="cls_ConsultaGeneral" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- costo: double&lt;br&gt;- diagnostico: String&lt;br&gt;- observaciones: String" vertex="1">
+          <mxGeometry height="55" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_ConsultaGeneral_d" parent="cls_ConsultaGeneral" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="81" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_ConsultaGeneral_m" parent="cls_ConsultaGeneral" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ ConsultaGeneral(costo: double, diagnostico: String, observaciones: String)&lt;br&gt;+ calcularCosto(): double&lt;br&gt;+ getCosto(): double&lt;br&gt;+ setCosto(costo: double): void&lt;br&gt;+ getDiagnostico(): String&lt;br&gt;+ setDiagnostico(diagnostico: String): void&lt;br&gt;+ getObservaciones(): String&lt;br&gt;+ setObservaciones(observaciones: String): void&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="160" width="380" y="89" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Vacunacion" parent="pkg_servicios" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Vacunacion" vertex="1">
+          <mxGeometry height="189" width="352" x="436" y="211" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Vacunacion_a" parent="cls_Vacunacion" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- costoVacuna: double&lt;br&gt;- nombreVacuna: String" vertex="1">
+          <mxGeometry height="40" width="352" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Vacunacion_d" parent="cls_Vacunacion" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="352" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Vacunacion_m" parent="cls_Vacunacion" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ Vacunacion(costoVacuna: double, nombreVacuna: String)&lt;br&gt;+ calcularCosto(): double&lt;br&gt;+ getCostoVacuna(): double&lt;br&gt;+ setCostoVacuna(costoVacuna: double): void&lt;br&gt;+ getNombreVacuna(): String&lt;br&gt;+ setNombreVacuna(nombreVacuna: String): void&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="115" width="352" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Cirugia" parent="pkg_servicios" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Cirugia" vertex="1">
+          <mxGeometry height="189" width="346" x="818" y="211" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Cirugia_a" parent="cls_Cirugia" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="- complejidad: String&lt;br&gt;- horasQuirofano: double" vertex="1">
+          <mxGeometry height="40" width="346" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Cirugia_d" parent="cls_Cirugia" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="346" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Cirugia_m" parent="cls_Cirugia" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ Cirugia(complejidad: String, horasQuirofano: double)&lt;br&gt;+ calcularCosto(): double&lt;br&gt;+ getComplejidad(): String&lt;br&gt;+ setComplejidad(complejidad: String): void&lt;br&gt;+ getHorasQuirofano(): double&lt;br&gt;+ setHorasQuirofano(horasQuirofano: double): void&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="115" width="346" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Comprobante" parent="pkg_servicios" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Comprobante" vertex="1">
+          <mxGeometry height="324" width="380" x="1194" y="211" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Comprobante_a" parent="cls_Comprobante" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="&lt;u&gt;- totalGenerados: int&lt;/u&gt;&lt;br&gt;- idComprobante: int&lt;br&gt;- total: double&lt;br&gt;- fechaEmision: LocalDate&lt;br&gt;- citaAsociada: Cita" vertex="1">
+          <mxGeometry height="85" width="380" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Comprobante_d" parent="cls_Comprobante" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="380" y="111" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Comprobante_m" parent="cls_Comprobante" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" value="+ Comprobante(idComprobante: int, citaAsociada: Cita, total: double)&lt;br&gt;&lt;u&gt;+ getTotalGenerados(): int&lt;/u&gt;&lt;br&gt;+ mostrarDetalle(): String&lt;br&gt;+ getIdComprobante(): int&lt;br&gt;+ setIdComprobante(idComprobante: int): void&lt;br&gt;+ getTotal(): double&lt;br&gt;+ setTotal(total: double): void&lt;br&gt;+ getFechaEmision(): LocalDate&lt;br&gt;+ setFechaEmision(fechaEmision: LocalDate): void&lt;br&gt;+ getCitaAsociada(): Cita&lt;br&gt;+ setCitaAsociada(citaAsociada: Cita): void&lt;br&gt;+ toString(): String" vertex="1">
+          <mxGeometry height="205" width="380" y="119" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="pkg_servicios" source="cls_Vacunacion" style="endArrow=block;endSize=14;endFill=0;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Facturable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="pkg_servicios" source="cls_ConsultaGeneral" style="endArrow=block;endSize=14;endFill=0;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Facturable">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="437" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="pkg_servicios" source="cls_Cirugia" style="endArrow=block;endSize=14;endFill=0;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Facturable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="cls_Dueno" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Mascota">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="1320" />
+              <mxPoint x="1854" y="1320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9s" connectable="0" parent="e9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1 dueno" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9t" connectable="0" parent="e9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..* mascotas" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="cls_HistorialClinico" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Facturable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11s" connectable="0" parent="e11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11t" connectable="0" parent="e11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..* serviciosRealizados" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="cls_Cita" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Mascota">
+          <mxGeometry relative="1" x="-0.0309" as="geometry">
+            <Array as="points">
+              <mxPoint x="1854" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12s" connectable="0" parent="e12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12t" connectable="0" parent="e12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1 mascota" vertex="1">
+          <mxGeometry relative="1" x="0.7945" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="cls_Cita" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Veterinario">
+          <mxGeometry relative="1" x="0.1986" as="geometry">
+            <Array as="points">
+              <mxPoint x="1183" y="70" />
+              <mxPoint x="390" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13s" connectable="0" parent="e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.8143" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13t" connectable="0" parent="e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1 veterinario" vertex="1">
+          <mxGeometry relative="1" x="0.8401" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="cls_Cita" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Facturable">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1183" y="1214.5" />
+              <mxPoint x="1240" y="1214.5" />
+              <mxPoint x="1240" y="2021.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15s" connectable="0" parent="e15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8073" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15t" connectable="0" parent="e15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1 servicio" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="cls_Comprobante" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Cita">
+          <mxGeometry relative="1" x="0.0136" as="geometry">
+            <Array as="points">
+              <mxPoint x="1624" y="2000" />
+              <mxPoint x="1183" y="2000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17s" connectable="0" parent="e17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17t" connectable="0" parent="e17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1 citaAsociada" vertex="1">
+          <mxGeometry relative="1" x="0.8024" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="cls_Clinica" style="startArrow=diamondThin;startFill=0;startSize=18;endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Veterinario">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18s" connectable="0" parent="e18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18t" connectable="0" parent="e18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..* veterinarios" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="cls_Clinica" style="startArrow=diamondThin;startFill=0;startSize=18;endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Recepcionista">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19s" connectable="0" parent="e19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19t" connectable="0" parent="e19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..* recepcionistas" vertex="1">
+          <mxGeometry relative="1" x="0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="cls_Clinica" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Dueno">
+          <mxGeometry relative="1" x="-0.2279" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="600" />
+              <mxPoint x="350" y="1419.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21s" connectable="0" parent="e21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.7993" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21t" connectable="0" parent="e21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..* duenos" vertex="1">
+          <mxGeometry relative="1" x="0.7544" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="cls_Clinica" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Mascota">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1854" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22s" connectable="0" parent="e22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22t" connectable="0" parent="e22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..* mascotas" vertex="1">
+          <mxGeometry relative="1" x="0.7789" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24" edge="1" parent="1" source="cls_Clinica" style="endArrow=open;endFill=0;endSize=10;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Comprobante">
+          <mxGeometry relative="1" x="-0.072" as="geometry">
+            <Array as="points">
+              <mxPoint x="1624" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24s" connectable="0" parent="e24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.8" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e24t" connectable="0" parent="e24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="0..* comprobantes" vertex="1">
+          <mxGeometry relative="1" x="0.7858" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e25" edge="1" parent="1" source="cls_Recepcionista" style="endArrow=open;endFill=0;endSize=10;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Clinica">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e25m" connectable="0" parent="e25" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="«usa»" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26" edge="1" parent="1" source="cls_Veterinario" style="endArrow=open;endFill=0;endSize=10;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Cita">
+          <mxGeometry relative="1" x="0.0406" as="geometry">
+            <Array as="points">
+              <mxPoint x="1200" y="1480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e26m" connectable="0" parent="e26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="«usa»" vertex="1">
+          <mxGeometry relative="1" x="0.0406" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27" edge="1" parent="1" source="cls_Main" style="endArrow=open;endFill=0;endSize=10;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;" target="cls_Clinica">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="348" />
+              <mxPoint x="490" y="348" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e27m" connectable="0" parent="e27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;labelBackgroundColor=#ffffff;" value="«usa»" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
