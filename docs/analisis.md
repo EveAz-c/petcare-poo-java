@@ -22,4 +22,47 @@
 | Cirugia | concreta | - complejidad: String<br>- horasQuirofano: double | - calcularCosto()<br>- getComplejidad(), setComplejidad()<br>- getHorasQuirofano(), setHorasQuirofano()<br>- toString() | Modela los procedimientos quirúrgicos implementando Facturable; su costo depende de las horas de quirófano y del nivel de complejidad. |
 | Comprobante | concreta | - totalGenerados: int (static)<br>- idComprobante: int<br>- total: double<br>- fechaEmision: LocalDate<br>- citaAsociada: Cita | - getTotalGenerados() (static)<br>- mostrarDetalle()<br>- getIdComprobante(), setIdComprobante()<br>- getTotal(), setTotal()<br>- getFechaEmision(), setFechaEmision()<br>- getCitaAsociada(), setCitaAsociada()<br>- toString() | Almacena y muestra el recibo de una cita atendida. Lo crea Clinica.generarComprobante(), que le pasa el total ya calculado con el costo del servicio. El contador estático cuenta cuántos comprobantes se han creado. |
 | Facturable | interfaz | ninguno | - calcularCosto(): double | Define el contrato común para que cualquier servicio médico (ConsultaGeneral, Vacunacion, Cirugia) deba implementar obligatoriamente el cálculo de su costo. |
+<<<<<<< Updated upstream
 | Main | concreta | - ENTRADA: Scanner (static)<br>- FORMATO_FECHA: DateTimeFormatter (static)<br>- CLINICA: Clinica (static) | - main(String[] args)<br>- mostrarMenu()<br>- ejecutarOpcion(int)<br>- un método privado por cada opción del menú<br>- métodos de lectura de datos validados | Clase ejecutable que gestiona el flujo del sistema mediante un bucle de menú. Solo pide datos y llama al modelo; captura las excepciones del modelo y muestra su mensaje sin cerrar el programa. |
+=======
+<<<<<<< Updated upstream
+| Main | concreta | (Variables estáticas de control y colecciones en memoria) | - main(String[] args)<br>- mostrarMenu() | Clase principal ejecutable que gestiona el flujo del sistema mediante un bucle de menús y validaciones en consola. |
+=======
+| Main | concreta | - ENTRADA: Scanner (static)<br>- FORMATO_FECHA: DateTimeFormatter (static)<br>- CLINICA: Clinica (static) | - main(String[] args)<br>- mostrarMenu()<br>- ejecutarOpcion(int)<br>- un método privado por cada opción del menú<br>- métodos de lectura de datos validados | Clase ejecutable que gestiona el flujo del sistema mediante un bucle de menú. Solo pide datos y llama al modelo; captura las excepciones del modelo y muestra su mensaje sin cerrar el programa. |
+
+## 2. Objetos de ejemplo
+
+Los datos son del escenario de demostración que se ejecuta con el menú (capturas en `docs/capturas/`).
+
+| Objeto | Clase | Valores de sus atributos |
+| --- | --- | --- |
+| max | Perro | nombre = "Max", edad = 5, peso = 28.5, raza = "Labrador", nivelEnergia = "ALTO", dueno = carlos, historialClinico = (propio, creado dentro de Max) |
+| cirugiaPico | Cirugia | complejidad = "ALTA", horasQuirofano = 1.5 → calcularCosto() = 1.5 × 1200 × 2.0 = 3600.0 |
+| citaPico | Cita | fechaHora = 2026-11-05T12:00, estado = PROGRAMADA (después ATENDIDA), mascota = pico, veterinario = luis, consultorio = consultorio 2, servicio = cirugiaPico |
+
+## 3. Clases candidatas descartadas
+
+| Clase descartada | Por qué no se modeló |
+| --- | --- |
+| Servicio (clase padre de ConsultaGeneral, Vacunacion y Cirugia) | Los tres servicios no comparten atributos, solo comparten el compromiso de calcular su costo, y eso ya lo cubre la interfaz Facturable. Una clase padre sería una jerarquía vacía. |
+| Cobro o Pago | Lo cobrado siempre se puede calcular con la cita atendida y su servicio (calcularCosto()), por lo que guardar otra clase podría duplicar información y para el recibo ya existe Comprobante. |
+
+## 4. Justificación de relaciones
+
+La pregunta que decidió el tipo de cada relación fue: **¿qué pasa con una de las partes si la otra se elimina?**
+
+| Relación | Tipo | Multiplicidad y roles | Justificación |
+| --- | --- | --- | --- |
+| Cita → Mascota | Asociación | Cita (0..*) — (1) mascota | Son objetos independientes: la cita solo guarda una referencia. Si la cita se cancela o desaparece, la mascota sigue existiendo y viceversa. |
+| Cita → Veterinario | Asociación | Cita (0..*) — (1) veterinario | El veterinario existe antes de la cita y después de ella; la cita únicamente lo referencia para saber quién la atiende. |
+| Cita → Consultorio | Asociación | Cita (0..*) — (1) consultorio | El consultorio es un recurso que se reutiliza en muchas citas, por eso la cita no lo posee, solo lo usa en una fecha y hora. |
+| Cita → Facturable | Asociación | Cita (0..*) — (1) servicio | La cita apunta a un servicio por la interfaz, sin saber si es consulta, vacuna o cirugía. Es lo que permite el polimorfismo en el cobro. |
+| Dueno — Mascota | Asociación | Dueno (1) dueno — (0..*) mascotas Mascota | Un dueño puede tener varias mascotas, pero ninguno es parte del otro: si se da de baja una mascota, el dueño sigue existiendo (solo se quita de su lista). Se descartó la composición porque el dueño no crea a sus mascotas. |
+| Comprobante → Cita | Asociación | Comprobante (0..1) — (1) citaAsociada | El comprobante solo hace referencia a la cita que cobra; la cita atendida existe aunque no se haya generado su comprobante. |
+| HistorialClinico → Facturable | Asociación | HistorialClinico (0..*) — serviciosRealizados | Los servicios se crean al agendar la cita y el historial solo guarda la referencia al atenderla; el servicio no depende del historial. |
+| Clinica ◇— Veterinario | Agregación | Clinica (1) — (0..*) veterinarios | Los veterinarios se crean fuera de la clínica y se reciben ya hechos (agregarVeterinario). Si la clínica cierra, el veterinario sigue existiendo y podría trabajar en otra, que es justo lo que dice el caso. Se descartó la composición porque la clínica no los crea ni los posee. |
+| Clinica ◇— Dueno, Mascota y Recepcionista | Agregación | Clinica (1) — (0..*) | Igual que los veterinarios, llegan creados desde afuera y la clínica solo los agrupa en sus listas. |
+| Clinica ◆— Consultorio | Composición | Clinica (1) — (1..*) consultorios | La clínica crea sus consultorios (crearConsultorio) y nadie más puede hacerlo porque el constructor es de paquete. Si la clínica desaparece, los consultorios también, y no se comparten con otra clínica. |
+| Mascota ◆— HistorialClinico | Composición | Mascota (1) — (1) historialClinico | El historial se crea dentro del constructor de Mascota y no tiene sentido sin ella. Al dar de baja la mascota ya nada apunta al historial y el recolector de basura lo libera junto con ella. |
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
